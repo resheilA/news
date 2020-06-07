@@ -2,8 +2,8 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "123456";
-$dbname = "users";
+$password = "";
+$dbname = "sports_news";
 
 // Create connection
 $db = new mysqli($servername, $username, $password ,$dbname);
