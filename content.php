@@ -33,20 +33,27 @@ while($row = $result->fetch_assoc())
 	}
 	else
 	{
-echo"<h6><a href='index.php' style='text-decoration:underline'>Home</a> > <a href='articles.php?id=$row[article_category]' style='text-decoration:underline'>Articles</a> > $row[article_name] </h6>";
-echo"
-  <h2 class='text-center'>$row[article_name]</h2>
-  <div class='row'>
-  <div class='col-md-9'>
-   $row[article_content]
+	echo"	
+	<div class='row p-2'>
+	<div class='col-md-9 p-5'>
+	
+	<img src='Profilepics/Articles/$row[article_unique_key]/$row[article_image]' alt ='image' style='max-width:100%;' class='m-2 pb-2'>
+<h2 class='p'>$row[article_name]</h2>
+<h5 class='p'>$row[article_summary]</h5>
+  <p class='p-2'>$row[article_content]<p>
+   
+   <br>
+   
+  <h6 class='pb-4'><a href='index.php' style='text-decoration:underline'>Home</a> > <a href='articles.php?id=$row[article_category]' style='text-decoration:underline'>Articles</a> > $row[article_name] </h6>
+   
    <h4>Comments:</h4>";
    $sql4 = "SELECT * FROM comments WHERE comment_article = $_GET[id] ORDER BY comment_create DESC";
   $result4=$db->query($sql4);
-  
-  echo " <form name='com' method='post' id='comments'>
 
-                      <h3 id='user'>Reply</h3>
-                      <textarea class='form-control' name='com_desc' rows='4' cols='155' id='cdesc' placeholder='Summary'></textarea>
+
+  echo " <form name='com' method='post' id='comments'>
+                      
+                      <textarea class='form-control' name='com_desc' rows='4' cols='155' id='cdesc' placeholder='Comment'></textarea>
 					  <br>
 					  <p class='err' id='error'></p>
 					  <button type='submit' id='cbtn' class='btn btn-dark btn-lg float-right' name='newcom' >Submit</button>
@@ -89,8 +96,10 @@ echo"
   
  echo"  
   </div>
-  <div class='col-md-3'>
+  <div class='col-md-3' style='border:1px solid black;'>
+  <hr>
   <h5 class='text-center'>More articles</h5>
+  <hr>
   <br>";
   $sql2="SELECT * FROM articles";
   $res=$db->query($sql2);
@@ -108,10 +117,10 @@ echo"
   echo"
   <div class='row'>
   <div class='col-xl-6'>
-  <img src='Profilepics/Articles/$row3[article_unique_key]/$row3[article_image]' alt = 'image' style='width:168px;height:100px;'>
-   </div>
+  <img src='Profilepics/Articles/$row3[article_unique_key]/$row3[article_image]' alt = 'image'  class='img-thumbnail'style='max-height:7em'>
+  </div>
    <div class='col-xl-6'>
-   <b >$row3[article_name]</b>
+   <b>$row3[article_name]</b>
    
    <p>$row3[article_summary]</p>
    
@@ -140,7 +149,7 @@ echo"
   
  
   </div>
-
+<?php include 'footer.php'; ?>
 <script>
 $(document).ready(function(){
   $('#comments').submit(function(event){
@@ -194,5 +203,5 @@ function Blockalert(){
 }
 </script>
 
-<?php include 'footer.php'; ?>
+
 </html>

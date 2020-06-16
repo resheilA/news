@@ -25,7 +25,7 @@ $start = ($page - 1) * $limit;
 $sql = "SELECT * FROM articles WHERE article_category = $_GET[id] LIMIT $start,$limit";
 $result = $db->query($sql);
 
-echo"<h6><a href='index.php' style='text-decoration:underline'>Home</a></h6>";
+
 
 if($result->num_rows == 0)
 {
@@ -58,6 +58,7 @@ while($row = $result->fetch_assoc())
  {	 
 echo"
    <a href='content.php?id=$row[article_id]'>
+   <div class='card'>
    <div class='row'>
    <div class='col-md-6'>
    <img src='Profilepics/Articles/$row[article_unique_key]/$row[article_image]' alt = 'image' style='width:400px;height:200px;'>
@@ -86,6 +87,7 @@ echo"
    
 echo"
    <h5>$row[article_summary]</h5>
+   </div>
    </div>
    </div>
    <hr>

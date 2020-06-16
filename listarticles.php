@@ -25,7 +25,7 @@ $start = ($page - 1) * $limit;
 $sql = "SELECT * FROM articles LIMIT $start,$limit";
 $result = $db->query($sql);
 
-echo"<h6><a href='index.php' style='text-decoration:underline'>Home</a></h6>";
+
 
 if($result->num_rows == 0)
 {

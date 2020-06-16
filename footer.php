@@ -36,30 +36,41 @@
               </div>
               <div class="footer-list-29 footer-2">
                   <ul>
-                      <h6 class="footer-title-29">Useful Links Categories</h6>
-                      <li><a href="services.html">Management</a></li>
-                      <li><a href="services.html">Reporting</a></li>
-                      <li><a href="services.html">Tracking</a></li>
-                      <li><a href="services.html">All Users</a></li>
-                      <li><a href="contact.html">Support</a></li>
+                      <h6 class="footer-title-29">Categories</h6>
+					  <?php
+					  $sql_footer = "SELECT * FROM category ORDER BY cat_id DESC LIMIT 5";
+					  $result_footer = $db->query($sql_footer);
+					  while($row_footer = $result_footer->fetch_assoc())
+					  {
+					  echo"
+                      <li><a href='articles.php?id=$row_footer[cat_id]&page=1'><p>$row_footer[cat_name]</p></a></li>
+                      ";
+					  }
+                      ?>
+                      
                   </ul>
               </div>
               <div class="footer-list-29 footer-3">
                   <div class="properties">
-                      <h6 class="footer-title-29">Featured Properties</h6>
-                      <a href="#"><img src="assets/images/g7.jpg" class="img-responsive" alt=""><p>We Are Leading International Consultiing Agency</p></a>
-                      <a href="#"><img src="assets/images/g8.jpg" class="img-responsive" alt=""><p>Digital Marketing Agency all the foundational tools</p></a>
-                      <a href="#"><img src="assets/images/g9.jpg" class="img-responsive" alt=""><p>Doloremque velit sapien labore eius itna</p></a>
+                      <h6 class="footer-title-29">Recent Articles</h6>
+					  <?php
+					  
+					  $sql_footer2 = "SELECT * FROM articles ORDER BY article_create DESC LIMIT 5";
+					  $result_footer2 = $db->query($sql_footer2);
+					  while($row_footer2 = $result_footer2->fetch_assoc())
+					  {
+					  echo"
+                      <a href='content.php?id=$row_footer2[article_id]'><p>$row_footer2[article_name]</p></a>
+                      ";
+					  }
+                     ?>
                   </div>
               </div>
               <div class="footer-list-29 footer-4">
                   <ul>
                       <h6 class="footer-title-29">Quick Links</h6>
-                      <li><a href="index.html">Home</a></li>
-                      <li><a href="about.html">About</a></li>
-                      <li><a href="services.html">Services</a></li>
-                      <li><a href="#"> Blog</a></li>
-                      <li><a href="contact.html">Contact</a></li>
+                      <li><a href="index.php">Home</a></li>
+                      
                   </ul>
               </div>
           </div>
@@ -125,3 +136,4 @@
 </body>
 
 </html>
+<!-- // grids block 5 -->
