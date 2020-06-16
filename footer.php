@@ -96,7 +96,7 @@
                  <!-- /move top -->
 </section>
 <!-- // grids block 5 -->
-<script src="<?php echo C_ASSET_PATH; ?>assets/js/jquery-3.3.1.min.js"></script>
+<script src="assets/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <!-- //footer-28 block -->
