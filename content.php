@@ -22,7 +22,7 @@ $result = $db->query($sql);
 
 if($result->num_rows == 0)
 {  
-    echo"<h6><a href='index.php' style='text-decoration:underline'>Home</a> > <a href='articles.php?id=$row[article_category]' style='text-decoration:underline'>Articles</a> </h6>";
+    echo"<h6><a href='index.php' style='text-decoration:underline'>Home</a> > <a href='articles.php?id=$row[article_category]' style='text-decoration:underline'>Articles</a></h6>";
 	echo "<h2>No articles</h2>";
 }
 while($row = $result->fetch_assoc())
@@ -33,7 +33,7 @@ while($row = $result->fetch_assoc())
 	}
 	else
 	{
-echo"<h6><a href='index.php' style='text-decoration:underline'>Home</a> > <a href='articles.php?id=$row[article_category]' style='text-decoration:underline'>Articles</a> </h6>";
+echo"<h6><a href='index.php' style='text-decoration:underline'>Home</a> > <a href='articles.php?id=$row[article_category]' style='text-decoration:underline'>Articles</a> > $row[article_name] </h6>";
 echo"
   <h2 class='text-center'>$row[article_name]</h2>
   <div class='row'>
@@ -50,6 +50,7 @@ echo"
 					  <br>
 					  <p class='err' id='error'></p>
 					  <button type='submit' id='cbtn' class='btn btn-dark btn-lg float-right' name='newcom' >Submit</button>
+					  </form>
 					  <br>";
 					  
   if($result4->num_rows == 0)
@@ -192,5 +193,6 @@ function Blockalert(){
 	alert('This article has been blocked by an admin');
 }
 </script>
-</body>
+
+<?php include 'footer.php'; ?>
 </html>

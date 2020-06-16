@@ -80,6 +80,7 @@ echo "
 <textarea class='form-control' name='art_desc' rows='4' cols='155' id='adesc' placeholder='Summary'></textarea>
 
 <br>
+<input type='text' id = 'akey' name = 'art_key' class='form-control mb-4' placeholder = 'Enter the keywords(Seperate them by commas)'>
 <input type="password" class="form-control mb-4" name="vpc" id="vpcode" placeholder="Enter the vpcode"/>
 <span onclick="myFunction2()" id="eye" class="far fa-eye passcheck"></span>
 <input type='file' name='file' id='file'/>
@@ -103,6 +104,7 @@ $(document).ready(function(){
 		event.preventDefault();
 		var aname = $('#aname').val();
 		var adesc = $('#adesc').val();
+		var akey = $('#akey').val();
 		var vpcode = $('#vpcode').val();
 		var adesc2 = $('#adesc2').val();
 		var artsel = $('#artsel').val();
@@ -111,6 +113,7 @@ $(document).ready(function(){
 	    var form_data = new FormData();
 		form_data.append("art_name",aname);
 		form_data.append("art_desc",adesc);
+		form_data.append("art_key",akey);
 		form_data.append("vpc",vpcode);
 		form_data.append("art_desc2",adesc2);
 		form_data.append("artselect",artsel);

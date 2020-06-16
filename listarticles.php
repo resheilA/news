@@ -63,7 +63,7 @@ echo"
    <img src='Profilepics/Articles/$row[article_unique_key]/$row[article_image]' alt = 'image' style='width:400px;height:200px;'>
    </div>
    <div class='col-md-6'>
-   <h2 class='text-right'>$row[article_name]</h2>
+   <h2>$row[article_name]</h2>
    </a>
    ";
  }
@@ -79,13 +79,13 @@ echo"
    <img src='Profilepics/Articles/$row[article_unique_key]/$row[article_image]' alt = 'image' style='width:400px;height:200px;'>
    </div>
    <div class='col-md-6'>
-   <h2 class='text-right'>$row[article_name]</h2>
+   <h2>$row[article_name]</h2>
    </a>
    ";
  } 
    
 echo"
-   <h5 class='text-right'>$row[article_summary]</h5>
+   <h5>$row[article_summary]</h5>
    </div>
    </div>
    <hr>
@@ -139,5 +139,5 @@ function Blockalert(){
 	alert('This article has been blocked by an admin');
 }
 </script>
-</body>
+<?php include 'footer.php'; ?>
 </html>

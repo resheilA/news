@@ -17,6 +17,7 @@ else
 		
 		$art_name = mysqli_real_escape_string($db,$_POST['art_name']);
 	    $art_desc = mysqli_real_escape_string($db,$_POST['art_desc']);
+		$art_key = mysqli_real_escape_string($db,$_POST['art_key']);
 		$vpcode = mysqli_real_escape_string($db,$_POST['vpc']);
 	    $art_desc2 = mysqli_real_escape_string($db,$_POST['art_desc2']);
 		$art_tit = mysqli_real_escape_string($db,$_POST['artselect']);
@@ -50,6 +51,11 @@ else
 		elseif(strlen($art_desc) > 500)
 		{
 			echo "<span class='err'>Please summarize in under 500 characters</span>";
+			$cl = false;
+		}
+		elseif(empty($art_key))
+		{
+			echo "<span class='err'>Please fill in the keywords </span>";
 			$cl = false;
 		}
 		elseif(empty($vpcode))
@@ -116,7 +122,7 @@ elseif ($_FILES["file"]["size"] > 5000000) {
         else
 		{  
              	move_uploaded_file($_FILES['file']['tmp_name'],$target_file);
-				$sql = "INSERT INTO articles(article_name,article_summary,article_content,article_category,article_create,article_image,article_unique_key) VALUES('$art_name','$art_desc','$art_desc2','$art_tit',NOW(),'$target_name','$token')";
+				$sql = "INSERT INTO articles(article_name,article_summary,article_key,article_content,article_category,article_create,article_image,article_unique_key) VALUES('$art_name','$art_desc','$art_key','$art_desc2','$art_tit',NOW(),'$target_name','$token')";
 				$results = $db->query($sql);
 				echo "<script type='text/javascript'>
 			   setTimeout(function(){window.location.assign('../index.php');});	</script>";
@@ -146,11 +152,12 @@ elseif ($_FILES["file"]["size"] > 5000000) {
 
 var aname = "<?php echo $art_name; ?>";
 var adesc = "<?php echo $art_desc; ?>";
+var akey = "<?php echo $art_key; ?>";
 var artsel = "<?php echo $art_tit; ?>";
 var vpcode = "<?php echo $vpcode; ?>";
 var cls = "<?php echo $cl; ?>";
 
-if(aname !== '' && adesc !== '' && artsel !== 'No' && vpcode !== '' && vpcode == 'letsgetrightintothenews' && cls == true)
+if(aname !== '' && adesc !== '' && akey !== '' && artsel !== 'No' && vpcode !== '' && vpcode == 'letsgetrightintothenews' && cls == true)
 			
 		{
 			

@@ -24,7 +24,7 @@ else
 		{
 			echo "<span class='err'>Please fill in the vpcode</span>";
 		}
-		elseif($vpcode != 'letsgetrightintothenews')
+		elseif($vpcode != 'deletethisthing')
 		{
 			echo "<span class='err'>Wrong vpcode </span>";
 		}

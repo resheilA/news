@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2020 at 12:54 PM
+-- Generation Time: Jun 16, 2020 at 06:02 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -42,8 +42,8 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`cat_id`, `cat_name`, `cat_desc`, `cat_img`, `cat_unique_key`, `cat_create`) VALUES
-(29, 'Football', 'News related to football', 'euro-football-1080p-HD-Wallpaper.jpg', '318wk0ieuj', '2020-06-07 14:21:17'),
-(30, 'Cricket', 'News related to cricket', 'Balls-bat-free-wallpapers-hd-cricket.jpg', 'a3i8ujp1wh', '2020-06-07 14:21:49');
+(41, 'Football', 'News related to football', 'Profile.jpg', '1rahlje3a8', '2020-06-07 17:23:45'),
+(42, 'Basketball', 'News related to Basketball', 'Profile.jpg', 'ip18hjewqj', '2020-06-07 17:25:15');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +63,7 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `cat_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `cat_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

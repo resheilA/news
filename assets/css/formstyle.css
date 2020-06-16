@@ -1,0 +1,13 @@
+.con_style{box-shadow:0px 2px 10px black;
+           background-color:white;}
+
+.passcheck {
+        float: right;
+        margin-right: 6px;
+        margin-top: -50px;
+        position: relative;
+        z-index: 2;
+        
+    }
+	
+	

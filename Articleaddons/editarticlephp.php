@@ -17,6 +17,7 @@ else
 		$btn = $_POST['newart'];
 		$art_name = mysqli_real_escape_string($db,$_POST['art_name']);
 	    $art_desc = mysqli_real_escape_string($db,$_POST['art_desc']);
+		$art_key = mysqli_real_escape_string($db,$_POST['art_key']);
 		$vpcode = mysqli_real_escape_string($db,$_POST['vpc']);
 	    $art_desc2 = mysqli_real_escape_string($db,$_POST['art_desc2']);
 		$art_tit = mysqli_real_escape_string($db,$_POST['artselect']);
@@ -116,7 +117,7 @@ elseif ($_FILES["file"]["size"] > 5000000) {
 		{
 			echo "<span class='err'></span>";
 	            move_uploaded_file($_FILES['file']['tmp_name'],$target_file);
-				$sql = "UPDATE articles SET article_name = '$art_name',article_summary = '$art_desc',article_content = '$art_desc2',article_category = '$art_tit',article_create = NOW(),article_image = '$target_name' WHERE article_id = $_GET[id]";
+				$sql = "UPDATE articles SET article_name = '$art_name',article_summary = '$art_desc',article_key = '$art_key',article_content = '$art_desc2',article_category = '$art_tit',article_create = NOW(),article_image = '$target_name' WHERE article_id = $_GET[id]";
 				$results = $db->query($sql);
 				
 				
@@ -150,13 +151,14 @@ $('#abtn').click(function(){
 
 var aname = "<?php echo $art_name; ?>";
 var adesc = "<?php echo $art_desc; ?>";
+var akey = "<?php echo $art_key; ?>";
 var artsel = "<?php echo $art_tit; ?>";
 var vpcode = "<?php echo $vpcode; ?>";
 var adesc2 = "<?php echo $art_desc2; ?>";
 var cls = "<?php echo $cl; ?>";
 
 
-if(aname !== '' && adesc !== '' && artsel !== 'No' && vpcode !== '' && vpcode == 'letsgetrightintothenews' && adesc2 !== '' && cls == true)
+if(aname !== '' && adesc !== '' && akey !== '' && artsel !== 'No' && vpcode !== '' && vpcode == 'letsgetrightintothenews' && adesc2 !== '' && cls == true)
 			
 		{
 			

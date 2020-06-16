@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2020 at 12:54 PM
+-- Generation Time: Jun 16, 2020 at 06:02 PM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -37,6 +37,17 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`comment_id`, `comment_summary`, `comment_article`, `comment_create`, `comment_by`) VALUES
+(19, 'hey', 33, '2020-06-16 13:26:06', ''),
+(20, 'ds', 33, '2020-06-16 16:12:49', ''),
+(21, 'dss', 33, '2020-06-16 16:12:56', ''),
+(22, 'dsds', 33, '2020-06-16 16:14:47', ''),
+(23, 'hey', 33, '2020-06-16 16:39:38', '');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -55,7 +66,7 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `comment_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `comment_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
